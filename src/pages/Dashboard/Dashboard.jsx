@@ -2,12 +2,10 @@ import styles from "./Dashboard.module.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import { useAuthValue } from "../../contexts/AuthContext";
 import { useFetchUserDocuments } from "../../hooks/useFetchUserDocuments.jsx";
 import { useDeleteDocument } from "../../hooks/useDeleteDocument";
 
 const Dashboard = () => {
-  const { user } = useAuthValue();
   const { deleteDocument, response } = useDeleteDocument("posts");
   const {
     documents: fetchedPosts,
@@ -27,8 +25,8 @@ const Dashboard = () => {
   }, [fetchedPosts]);
 
   const handleDelete = (id) => {
-    setPostToDelete(id); 
-    setShowConfirmModal(true); 
+    setPostToDelete(id);
+    setShowConfirmModal(true);
   };
 
   const handleCancel = () => {
@@ -41,7 +39,6 @@ const Dashboard = () => {
       deleteDocument(postToDelete);
       setPosts(posts.filter((post) => post.id !== postToDelete));
     }
-
     handleCancel();
   };
 

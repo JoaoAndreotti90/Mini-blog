@@ -2,14 +2,14 @@ import styles from "./CreatePost.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthValue } from "../../contexts/AuthContext";
-import { supabase } from "../../supabase/client"; 
+import { supabase } from "../../supabase/client";
 import { useInsertDocument } from "../../hooks/useInsertDocument";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
   const [body, setBody] = useState("");
-  const [tags, setTags] = useState(""); 
+  const [tags, setTags] = useState("");
   const [formError, setFormError] = useState("");
   const [uploading, setUploading] = useState(false);
 
@@ -38,7 +38,7 @@ const CreatePost = () => {
 
     try {
       const fileName = `${Date.now()}_${image.name}`;
-      const { data: uploadData, error: uploadError } = await supabase.storage
+      const { error: uploadError } = await supabase.storage
         .from("post-images")
         .upload(fileName, image);
 
@@ -55,7 +55,6 @@ const CreatePost = () => {
       }
 
       imageUrl = publicUrlData.publicUrl;
-
     } catch (error) {
       console.error(error.message);
       setFormError("Ocorreu um erro ao enviar a imagem. Tente novamente.");
@@ -73,8 +72,8 @@ const CreatePost = () => {
         image: imageUrl,
         body,
         tags: tagsArray,
-        user_id: user.id, 
-        created_by: user.user_metadata.display_name, 
+        user_id: user.id,
+        created_by: user.user_metadata.display_name,
       });
 
       navigate("/");
