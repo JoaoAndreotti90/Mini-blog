@@ -1,0 +1,26 @@
+.edit_post {
+  text-align: center;
+}
+
+.edit_post h2 {
+  font-size: 2.2em;
+  color: var(--text-primary);
+}
+
+.edit_post p {
+  color: var(--text-secondary);
+  margin-bottom: 2em;
+}
+
+.edit_post .preview_title {
+  margin-bottom: 0.2em;
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.image_preview {
+  max-width: 100%;
+  margin-bottom: 1em;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}

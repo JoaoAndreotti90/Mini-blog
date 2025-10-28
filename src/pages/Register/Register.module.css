@@ -1,0 +1,11 @@
+.register {
+  text-align: center;
+}
+
+.register h1 {
+  color: var(--text-primary); /* Adicionado */
+}
+
+.register p {
+  color: var(--text-secondary);
+}

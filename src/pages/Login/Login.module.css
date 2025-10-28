@@ -1,0 +1,12 @@
+.login {
+  text-align: center;
+}
+
+.login h1,
+.login h2 {
+  color: var(--text-primary); 
+}
+
+.login p {
+  color: var(--text-secondary);
+}

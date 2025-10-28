@@ -1,0 +1,23 @@
+.about {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about h1 {
+  color: var(--text-primary);
+}
+
+.about p {
+  color: var(--text-secondary);
+  margin-bottom: 2em;
+  max-width: 600px; 
+  line-height: 1.6; 
+}
+
+.about a {
+  display: block;
+  margin-top: 15px;
+  padding: 10px 15px;
+}

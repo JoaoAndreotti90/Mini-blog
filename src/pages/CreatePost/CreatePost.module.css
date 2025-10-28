@@ -1,0 +1,34 @@
+.create_post {
+  text-align: center;
+}
+
+.create_post h2 {
+  font-size: 2.2em;
+  color: var(--text-primary);
+}
+
+.create_post p {
+  color: var(--text-secondary);
+  margin-bottom: 2em;
+}
+
+.hidden_input {
+  display: none;
+}
+
+.image_label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.image_label span {
+  text-align: left;
+}
+
+.file_name {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  text-align: left;
+}
