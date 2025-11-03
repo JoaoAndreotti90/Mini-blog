@@ -1,38 +1,125 @@
 .navbar {
   display: flex;
-  box-shadow: var(--shadow-color) 0px 2px 5px 0px; 
+  box-shadow: var(--shadow-color) 0px 2px 5px 0px;
   justify-content: space-between;
   align-items: center;
   padding: 0.5em 2em;
-  background-color: var(--surface-color); 
-  border-bottom: 1px solid var(--border-color); 
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .brand {
   font-size: 1.2em;
+  text-decoration: none;
+  color: inherit;
 }
 
 .brand span {
   font-weight: 900;
   text-transform: uppercase;
-  color: var(--primary-color); 
+  color: var(--primary-color);
 }
 
 .links_list {
   display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .links_list li {
   margin-right: 1em;
 }
 
+.links_list li:last-child {
+  margin-right: 0;
+}
+
 .links_list li a {
   padding: 0.4em 0.6em;
+  text-decoration: none;
+  color: inherit;
 }
 
 .active {
   background-color: var(--primary-color);
-  color: var(--text-on-btn); 
+  color: var(--text-on-btn);
   border-radius: 5px;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 1em 1.5em;
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .links_list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+    background-color: var(--surface-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-color) 0px 4px 5px 0px;
+  }
+
+  .links_list.open {
+    display: flex;
+  }
+
+  .links_list li {
+    margin: 0 auto 1em auto;
+    width: 90%;
+  }
+
+  .links_list li:last-child {
+    margin: 0 auto 0 auto;
+  }
+
+  .links_list li a,
+  .links_list li button {
+    display: block;
+    padding: 0.8em;
+    width: 100%;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .links_list li button {
+    border: none;
+    background-color: var(--danger-color, #dc3545);
+    color: var(--text-on-btn, #fff);
+    font-size: 1em;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+  }
+
+  .active {
+    background-color: var(--primary-color);
+    color: var(--text-on-btn);
+  }
 }

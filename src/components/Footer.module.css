@@ -11,3 +11,23 @@
 .footer p {
   margin-bottom: 0.5em;
 }
+
+@media (max-width: 768px) {
+  
+  .footer {
+    padding: 1.5em 1em;
+    box-sizing: border-box; 
+  }
+
+  .footer h3 {
+    text-align: center; 
+    font-size: 1.1em;  
+    line-height: 1.4; 
+  }
+
+  .footer p {
+    text-align: center; 
+    font-size: 0.9em;  
+    margin-bottom: 0;  
+  }
+}

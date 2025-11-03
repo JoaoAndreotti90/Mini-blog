@@ -3,16 +3,17 @@
 }
 
 .post_container h1 {
-  color: var(--text-primary); 
+  color: var(--text-primary);
 }
 
 .post_container h3 {
   margin-bottom: 0.2em;
-  color: var(--text-primary); 
+  color: var(--text-primary);
 }
 
 .post_container img {
-  max-width: 600px;
+  /* Limite de 600px para DESKTOP */
+  max-width: 600px; 
   margin-bottom: 1em;
   border: 1px solid var(--border-color);
   border-radius: 5px;
@@ -31,4 +32,48 @@
 .tags span {
   font-weight: bold;
   color: var(--primary-color);
+}
+
+/*
+*
+* --- ADIÇÃO DA MEDIA QUERY PARA MOBILE ---
+*
+*/
+@media (max-width: 768px) {
+  
+  .post_container {
+    /* Adiciona padding horizontal ao container pai no mobile.
+       Isso cria a "margem" lateral para o conteúdo, incluindo a imagem. */
+    padding: 0 1em; /* 0 de padding em cima/baixo, 1em nas laterais */
+    /* Garante que o padding não cause overflow */
+    box-sizing: border-box; 
+  }
+
+  .post_container img {
+    /* A imagem ocupará 100% do espaço disponível DENTRO do container,
+       respeitando o padding que acabamos de adicionar. */
+    max-width: 100%;
+    width: 100%; /* Garante que a imagem se estenda o máximo possível */
+    /* Remove o margin-bottom para adicionar depois se necessário no .post_container */
+    margin-bottom: 1em; /* Mantenha se quiser espaço abaixo da imagem */
+  }
+
+  .post_container h1 {
+    font-size: 1.6em;
+  }
+
+  .post_container h3 {
+    font-size: 1.1em;
+  }
+
+  /* Opcional: ajustar as tags no mobile */
+  .post_container .tags {
+    margin-bottom: 0.5em; /* Reduz margem inferior */
+    flex-wrap: wrap; /* Permite que as tags quebrem linha */
+    justify-content: center; /* Centraliza as tags */
+  }
+
+  .tags p {
+    margin: 0.2em 0.5em; /* Margem menor entre as tags */
+  }
 }
