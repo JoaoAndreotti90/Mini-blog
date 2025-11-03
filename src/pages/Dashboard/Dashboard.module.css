@@ -61,25 +61,25 @@
 }
 
 .modal_backdrop {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); 
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .modal_box {
-  background: var(--color-background); 
+  background: var(--color-background);
   padding: 2em;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   width: 90%;
-  max-width: 450px; 
+  max-width: 450px;
   text-align: center;
 }
 
@@ -96,9 +96,56 @@
 .modal_buttons {
   display: flex;
   justify-content: center;
-  gap: 1em; 
+  gap: 1em;
 }
 
 .modal_buttons button {
   flex: 1;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 0 1em;
+    box-sizing: border-box;
+  }
+
+  .dashboard h2 {
+    font-size: 1.8em;
+  }
+
+  .post_header,
+  .post_row {
+    width: 100%;
+    padding: 10px 5px;
+    box-sizing: border-box;
+  }
+
+  .post_header {
+    font-size: 0.9em;
+  }
+
+  .post_row p {
+    font-size: 0.9em;
+  }
+
+  .post_row div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+  }
+
+  .post_row button,
+  .post_row a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: auto;
+    padding: 8px;
+    font-size: 0.8em;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
 }
